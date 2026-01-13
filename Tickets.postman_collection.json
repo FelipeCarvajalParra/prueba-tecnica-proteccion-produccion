@@ -1,0 +1,64 @@
+{
+  "info": {
+    "name": "Prueba-Tickets API",
+    "_postman_id": "7a5b8e52-1234-4d56-8a9b-abcdef123456",
+    "description": "Colección para probar el backend de prueba-tickets",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear Ticket",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tipo\": \"INCIDENTE\",\n  \"prioridad\": 3,\n  \"usuario\": \"Juan Pérez\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/tickets",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["tickets"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Tickets",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tickets",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["tickets"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Tickets por Prioridad",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tickets/prioridad",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["tickets", "prioridad"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
