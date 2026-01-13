@@ -1,18 +1,19 @@
-# Imagen base de Java 17
 FROM eclipse-temurin:17-jdk-alpine
 
-# Directorio de trabajo
+# Instala Maven
+RUN apk add --no-cache maven
+
 WORKDIR /app
 
-# Copiar el pom.xml y src
+# Copiar archivos
 COPY pom.xml .
 COPY src ./src
 
-# Construir el proyecto
-RUN ./mvnw clean package
+# Build con Maven
+RUN mvn clean package
 
-# Exponer el puerto
+# Exponer puerto
 EXPOSE 10000
 
-# Comando para ejecutar la app
+# Ejecutar app
 CMD ["java", "-jar", "target/prueba-tickets-0.0.1-SNAPSHOT.jar"]
