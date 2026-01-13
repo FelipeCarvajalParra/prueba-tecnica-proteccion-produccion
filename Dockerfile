@@ -1,5 +1,5 @@
-# Imagen base de OpenJDK
-FROM openjdk:17-jdk-alpine
+# Imagen base de Java 17
+FROM eclipse-temurin:17-jdk-alpine
 
 # Directorio de trabajo
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY src ./src
 # Construir el proyecto
 RUN ./mvnw clean package
 
-# Exponer el puerto (Render lo reemplaza dinámicamente)
+# Exponer el puerto
 EXPOSE 10000
 
 # Comando para ejecutar la app
